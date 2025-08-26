@@ -1,0 +1,13 @@
+# auto_cdr
+- 功能:簡化CDR 的輸入流程
+- 使用方式:
+    - 下載後直接點開auto_cdr/auto_cdr.exe 即可開啟
+    - 輸入完所需資料後即會在auto_cdr.exe 同一層位置生成{site_name}_cdr.xlsx
+- 注意事項:
+    - template 必須與auto_cdr.exe 放在同一層資料夾
+- 輸入限制:
+    - Node Name 需輸入2位英文6位數字
+    - TAC 需輸入數字
+    - Longitdue、Latitude 可輸入浮點數或整數，輸入整數會直接輸出，浮點數會四捨五入到小數點後6位
+    - band 可多選
+    - 表格內資料只能填寫整數，且只有直列完整填寫完的資料會被輸出
