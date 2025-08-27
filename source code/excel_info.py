@@ -187,9 +187,9 @@ class ExcelInfo():
             self.export_map["Latitude"] = self._get_display_latitude_or_longitude(self.latitude)
             self.export_map["Longitude"] = self._get_display_latitude_or_longitude(self.longitude)
             self.export_map["Physical Layer Cell ID Group"] =self._get_display_pss()
-            sss_700_keys = ["Physical Layer Sub Cell ID 1","Physical Layer Sub Cell ID 2","Physical Layer Sub Cell ID 3"]
+            sss_700_keys = ["Physical Layer Sub Cell ID 1","Physical Layer Sub Cell ID 2","Physical Layer Sub Cell ID 3","Physical Layer Sub Cell ID 4","Physical Layer Sub Cell ID 5","Physical Layer Sub Cell ID 6"]
             self._enter_display_sss_or_rach(is_sss = True,keys = sss_700_keys)
-            rach_700_keys =["RACH root sequence number 1","RACH root sequence number 2","RACH root sequence number 3"]
+            rach_700_keys =["RACH root sequence number 1","RACH root sequence number 2","RACH root sequence number 3","RACH root sequence number 4","RACH root sequence number 5","RACH root sequence number 6"]
             self._enter_display_sss_or_rach(is_sss = False,keys = rach_700_keys)
         if "700 5M" in self.bands:
             self.export_map["APT EUtranCellFDD ID (L700)"] = self._get_display_cell_name("700 5M")
@@ -212,9 +212,10 @@ class ExcelInfo():
             self.export_map["Longitude (L2600)"] = self._get_display_latitude_or_longitude(self.longitude)
             self.export_map["EUtranCellFDD ID (L2600)"] = self._get_display_cell_name("2600")
             self.export_map["Cell ID (L2600)"] = self._get_cell_id("2600")
-            sss_2600_keys =["Physical Layer Cell ID Group (L2600)","Physical Layer Sub Cell ID 1 (L2600)","Physical Layer Sub Cell ID 2 (L2600)","Physical Layer Sub Cell ID 3 (L2600)","Physical Layer Sub Cell ID 4 (L2600)","Physical Layer Sub Cell ID 5 (L2600)","Physical Layer Sub Cell ID 6 (L2600)",]
+            self.export_map["Physical Layer Cell ID Group (L2600)"] =self._get_display_pss()
+            sss_2600_keys =["Physical Layer Sub Cell ID 1 (L2600)","Physical Layer Sub Cell ID 2 (L2600)","Physical Layer Sub Cell ID 3 (L2600)","Physical Layer Sub Cell ID 4 (L2600)","Physical Layer Sub Cell ID 5 (L2600)","Physical Layer Sub Cell ID 6 (L2600)",]
             self._enter_display_sss_or_rach(is_sss=True,keys=sss_2600_keys)
-            rach_2600_keys =["RACH root sequence number 1 (L2600)","RACH root sequence number 2 (L2600)","RACH root sequence number 3 (L2600)"]
+            rach_2600_keys =["RACH root sequence number 1 (L2600)","RACH root sequence number 2 (L2600)","RACH root sequence number 3 (L2600)","RACH root sequence number 4 (L2600)","RACH root sequence number 5 (L2600)","RACH root sequence number 6 (L2600)"]
             self._enter_display_sss_or_rach(is_sss=False,keys=rach_2600_keys)
         if "2600 TDD" in self.bands:
             self.export_map["Latitude (TDD_L2600)_D5"] = self._get_display_latitude_or_longitude(self.latitude)
@@ -226,7 +227,7 @@ class ExcelInfo():
             self.export_map["Physical Layer Cell ID Group (TDD_L2600)_D5"] = self._get_display_pss()
             sss_tdd_2600_keys = ["Physical Layer Sub Cell ID 1 (TDD_L2600)_D5","Physical Layer Sub Cell ID 2 (TDD_L2600)_D5","Physical Layer Sub Cell ID 3 (TDD_L2600)_D5","Physical Layer Sub Cell ID 4 (TDD_L2600)_D5","Physical Layer Sub Cell ID 5 (TDD_L2600)_D5","Physical Layer Sub Cell ID 6 (TDD_L2600)_D5",]
             self._enter_display_sss_or_rach(is_sss=True,keys=sss_tdd_2600_keys)
-            rach_tdd_2600_keys =["RACH root sequence number 1 (TDD_L2600)_D5","RACH root sequence number 2 (TDD_L2600)_D5","RACH root sequence number 3 (TDD_L2600)_D5"]
+            rach_tdd_2600_keys =["RACH root sequence number 1 (TDD_L2600)_D5","RACH root sequence number 2 (TDD_L2600)_D5","RACH root sequence number 3 (TDD_L2600)_D5","RACH root sequence number 4 (TDD_L2600)_D5","RACH root sequence number 5 (TDD_L2600)_D5","RACH root sequence number 6 (TDD_L2600)_D5"]
             self._enter_display_sss_or_rach(is_sss=False,keys=rach_tdd_2600_keys)
             self.export_map["EUtranCellTDD ID (TDD_L2600)_D6"] = self._get_display_cell_name("2600 TDD",is2600D6=True)
             self.export_map["Cell ID (TDD_L2600)_D6"] = self._get_cell_id("2600 TDD D6")
@@ -235,7 +236,7 @@ class ExcelInfo():
             self._enter_display_sss_or_rach(is_sss=True,keys=sss_tdd_2600_d6_keys)
             rach_tdd_2600_d6_keys =["RACH root sequence number 1 (TDD_L2600)_D6","RACH root sequence number 2 (TDD_L2600)_D6","RACH root sequence number 3 (TDD_L2600)_D6","RACH root sequence number 4 (TDD_L2600)_D6","RACH root sequence number 5 (TDD_L2600)_D6","RACH root sequence number 6 (TDD_L2600)_D6",]
             self._enter_display_sss_or_rach(is_sss=False,keys=rach_tdd_2600_d6_keys)
-        print(f"\n\n\n\nexport data:{self.export_map}\n\n\n")
+
 
         
 

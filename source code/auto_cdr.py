@@ -53,7 +53,7 @@ class MainWindow(QtWidgets.QMainWindow):
      
         if input_info.is_input_correct():              
             self.save_to_excel(export_map=input_info.export_map)
-            self.show_message("匯出成功", "Excel 匯出完成", QMessageBox.Information)
+            
             self.clear_interface()
         else:
             self.show_message("輸入錯誤", "請檢查您的輸入是否正確。", QMessageBox.Warning)
@@ -74,7 +74,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.ui.tableWidget.setItem(row, col, QtWidgets.QTableWidgetItem(""))
 
     def save_to_excel(self, export_map):
-        template_path = 'template.xlsx'
+        template_path = 'template/template.xlsx'
         try:
             filename = f'{export_map.get("Node Name", "output")}_cdr.xlsx'
             shutil.copy(template_path, filename)
@@ -97,8 +97,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 cell_value.font = Font(color="000000")  
 
         wb.save(filename)
-        print(f"Saved to {filename}")
-
+        self.show_message("匯出成功", "Excel 匯出完成", QMessageBox.Information)
 
 
     def is_input_correct(self):
